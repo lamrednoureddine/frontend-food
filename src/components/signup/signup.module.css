@@ -1,0 +1,150 @@
+.signUpContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f22a2a;
+    position: fixed; /* Ensuring it stays in place as you scroll */
+    top: 0;
+    left: 0;
+    z-index: 10; /* More realistic z-index value */
+    padding-top: 60px; /* Space for the navbar */
+}
+
+.signUpWrapper {
+    border-radius: 20px;
+    width: 80%; /* A percentage based width for better responsiveness */
+    max-width: 800px; /* Maximum width of the container */
+    min-height: 40vh; /* Minimum height */
+    display: flex;
+    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.2); /* Giving depth to the wrapper */
+    overflow: hidden; /* Handling overflowing content */
+    background-color: #fff; /* Background color */
+}
+
+.signUpLeftSide,
+.signUpRightSide {
+    flex-basis: 50%; /* Both sides will share the space equally */
+    height: auto; /* Auto height for flexibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 0;
+}
+
+.signUpRightSide {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0.8rem; /* Padding inside the right side */
+}
+.signUpRightSide > h2{
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 2.5rem;
+}
+
+.signUpRightSide > .signUpForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 32px;
+    
+}
+
+.signUpForm > input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    width: 50%;
+    padding-left: 0.25rem;
+    padding-bottom: 0.25rem;
+    transition: 150ms all ease-in-out;
+}
+
+.signUpForm > input:focus{
+    padding-left: 0.75rem;
+}
+
+.signUpForm > .submitBtn{
+    margin-top: 2.5rem;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.5rem;
+    background-color: #f22a2a;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.signUpForm {
+    width: 100%; /* Full width to its parent */
+}
+.signUpForm > .submitBtn:hover{
+    border-color: #f22a2a;
+    color: #f22a2a;
+    background-color: #fff;
+}
+
+.signUpForm > p{
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signUpForm > p >a{
+    text-decoration: none;
+    font-size: 17px;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+.errorMessage{
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #f00;
+    color: #fff;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+}
+.navbar {
+    z-index: 30; /* Ensure navbar is above everything else */
+    position: relative; /* To enable z-index stacking context */
+}
+@media (max-width: 768px) {
+    .signUpWrapper {
+        flex-direction: column; /* Stack children vertically on smaller screens */
+        width: 90%; /* Adjust width for small devices */
+        height: auto; /* Height adjusts to content */
+        padding-bottom: 2rem; /* Padding at the bottom */
+    }
+
+    .signUpLeftSide,
+    .signUpRightSide {
+        width: 100%; /* Full width of their parent */
+        flex-basis: auto; /* Resetting flex-basis */
+    }
+
+    .leftImg {
+        height: 200px; /* Fixed height for the image on mobile */
+    }
+}

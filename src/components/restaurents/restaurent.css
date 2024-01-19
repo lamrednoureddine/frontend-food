@@ -1,0 +1,63 @@
+.container{
+  padding: 20px;
+
+  width: 100%;
+  margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    
+}.restaurant-menu .slider-container {
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 20px; /* Spacing between slider and content */
+}
+
+/* Ensure images fill the container while maintaining aspect ratio */
+.restaurant-menu .slider-container img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-container {
+  flex-basis: 300px; /* Filter container width */
+  padding: 20px;
+}
+
+.restaurant-products {
+ 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+/* For large screens */
+@media (min-width: 1200px) {
+  .container {
+    padding: 30px;
+  }
+
+  .restaurant-products {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the item width for larger screens */
+  }
+}
+.restaurant-card {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    row-gap:  30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  .restaurant-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }

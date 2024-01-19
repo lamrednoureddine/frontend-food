@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background-color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: rgb(191, 187, 187);
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: rgba(238, 238, 238, 0.859);
+  }
+}

@@ -1,0 +1,152 @@
+/* General Styles */
+.container {
+    height: calc(100vh - 60px);
+    width: 100%;
+    padding-top: 3.8rem; /* changed from margin to avoid negative margin issues */
+    background-color: #f5eabc;
+    /* background-image commented out */
+}
+
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* reduced from 15rem for a more responsive design */
+}
+
+.title {
+    margin-top: 40px;
+    color: red; /* can use color names or hex codes */
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    white-space: nowrap;
+}
+
+.firstMsg {
+    margin-bottom: 24px;
+    font-size: 32px;
+}
+
+.firstMsg > span {
+    color: red;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.secondMsg {
+    margin-top: 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.secondMsg > span {
+    font-weight: bold;
+    color: rgb(221, 33, 33);
+}
+
+.desc {
+    color: #555;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 50px;
+    max-width: 350px;
+    line-height: 30px;
+}
+
+.buttons {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons > button {
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.25rem;
+    color: #fff;
+    background-color: #f00;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 150ms all;
+    cursor: pointer;
+}
+
+.buttons>button:hover {
+    border-color: #f00;
+    background-color: #fff;
+    color: #f00;
+}
+
+.buttonSee > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.manEatingImg {
+    margin-top: 2.5rem;
+    border-radius: 50%;
+    height: auto; /* changed to auto for preserving aspect ratio */
+    width: 95%; /* adjusted for responsiveness */
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .manEating {
+      margin: 10px 0; /* Adjust margins as needed for smaller screens */
+    }
+  }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        gap: 1rem;
+    }
+
+    .title, .firstMsg, .secondMsg {
+        text-align: center;
+    }
+
+    .desc {
+        max-width: 100%; /* allows description to fill container on narrower screens */
+    }
+
+    .buttons {
+        flex-direction: column; /* stack buttons vertically on small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 45px; /* smaller title for very narrow screens */
+    }
+
+    .firstMsg, .secondMsg {
+        font-size: 20px; /* adjust message size for better readability */
+    }
+
+    .firstMsg > span, .secondMsg > span {
+        font-size: 18px; /* adjust span font size within messages */
+    }
+
+    .buttons > button {
+        padding: 0.4rem 1rem; /* slightly smaller padding for buttons on smaller screens */
+    }
+}

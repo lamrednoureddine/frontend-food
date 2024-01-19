@@ -1,0 +1,128 @@
+/* Base container styling */
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+    width: 250px; /* Set container width */
+    height: 350px;
+}
+
+/* Hover effect to lift the card slightly on larger screens */
+@media (min-width: 768px) {
+    .container:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Image styling */
+.container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the area nicely */
+}
+
+/* Content wrapper styling */
+.wrapper {
+    padding: 1.5rem; /* Slightly increased padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space children out evenly */
+    gap: 1rem; /* Consistent spacing between items */
+}
+
+/* Title styling */
+.title {
+    font-size: 1.75rem; /* Increased base font size */
+    font-weight: bold;
+    color: #333; /* Darker text for better readability */
+    margin: 0; /* Reset margin */
+}
+
+/* Description text */
+.description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5; /* Improve readability with increased line height */
+}
+
+/* Quantity selector styling */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Smaller gap for inline elements */
+}
+
+.quantity > button {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #333;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners for buttons */
+    transition: background-color 0.2s ease;
+}
+
+.quantity > button:hover {
+    background-color: #ddd; /* Slight change on hover for feedback */
+}
+
+.quantity > .quantityNumber {
+    min-width: 30px; /* Minimum width for the number display */
+    text-align: center;
+}
+
+/* Price styling */
+.price {
+    font-size: 1.5rem; /* Larger and more prominent font size */
+    color: #28a745; /* Green color to imply a positive action like 'saving' */
+}
+
+/* Add To Cart button styling */
+.addToCart {
+    padding: 0.75rem 1.5rem;
+    background-color: #28a745; /* Match with price for consistent theme */
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    /* Flex properties for centered layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.addToCart:hover {
+    background-color: #218838; /* Darken button color on hover */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: stretch; /* Align children's heights */
+    }
+
+    .wrapper {
+        width: 50%; /* Take half of the space for content */
+        align-items: flex-start; /* Content aligned to the start */
+    }
+
+    .title, .description, .price {
+        text-align: left; /* Align text to the left on larger screens */
+    }
+
+    .addToCart {
+       width: auto; /* Revert to auto width for the button */
+       margin-top: 0; /* Remove top margin if any */
+    }
+}

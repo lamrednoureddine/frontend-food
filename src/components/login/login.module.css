@@ -1,0 +1,164 @@
+.loginContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f00;
+    position: fixed; /* changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* lowered z-index but still high */
+    overflow-y: auto; /* add scroll if needed */
+    padding-top: 60px; /* added space for navbar */
+}
+
+/* Use more realistic z-index values */
+.navbar {
+    position: relative;
+    z-index: 1010; /* higher than loginContainer */
+}
+
+.loginWrapper {
+    border-radius: 20px;
+    width: 80%; /* A percentage based width for better responsiveness */
+    max-width: 800px; /* Maximum width of the container */
+    min-height: 40vh; /* Minimum height */
+    display: flex;
+    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.2); /* Giving depth to the wrapper */
+    overflow: hidden; /* Handling overflowing content */
+    background-color: #fff; /* Background color */
+}
+/* left */
+.loginLeftSide{
+    flex: 1;
+    width: 50%;
+    height: 100%;
+}
+.loginLeftSide,
+.loginRightSide {
+    flex-basis: 50%; /* Both sides will share the space equally */
+    height: auto; /* Auto height for flexibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* right */
+
+.loginRightSide{
+    margin: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;  display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0.8rem;
+}
+.loginRightSide > h2{
+    text-align: center;
+    font-size: 46px;
+    color: #f22a2a;
+    margin: 2.5rem 0;
+}
+
+.loginRightSide > .loginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loginForm{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+}
+
+.loginForm > input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    width: 50%;
+    padding-left: 0.25rem;
+    padding-bottom: 0.25rem;
+    transition: 150ms all ease-in-out;
+}
+
+.loginForm >input:focus{
+    padding-left: 0.75rem;
+}
+
+.loginForm>.submitBtn{
+    margin-top: 2.5rem;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.5rem;
+    background-color: #f22a2a;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.loginForm > .submitBtn:hover{
+    border-color: #f22a2a;
+    color: #f22a2a;
+    background-color: #fff;
+}
+
+.loginForm>p{
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginForm > p > a{
+    text-decoration: none;
+    font-size: 17px;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+.errorMessage{
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .loginWrapper {
+        flex-direction: column; /* Stack left and right sides vertically */
+        min-height: 100vh;
+        max-width: initial; /* Resets any set max-width */
+        width: 100%;
+    }
+
+    .loginLeftSide, .loginRightSide {
+        width: 100%; /* Full width for small screens */
+    }
+    
+    .leftImg {
+        position: static; /* Reset to default positioning */
+    }
+}

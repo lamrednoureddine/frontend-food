@@ -1,0 +1,235 @@
+.container{
+    height: calc(100vh - 60px);
+    width: 100%;
+    margin: 10rem 0;
+}
+.loginAlert {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 50px;
+    gap: 20px;
+    position: fixed; /* or 'absolute' depending on your layout */
+    top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 16px;
+    border-radius: 5px;
+    background-color: #2ea4df; /* Light red background for visibility */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(31, 30, 30, 0.461);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }.showLoginAlert  button:hover{
+    cursor: pointer;
+    inset: none;
+  }
+  .showLoginAlert  button{
+    background-color: red;
+    border-radius:50%;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    border: none;
+  }
+  /* Class to toggle visibility and opacity */
+  .showLoginAlert {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+.wrapper{
+    margin: 0 auto;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    gap: 1rem;
+}
+
+.left{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.product{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.closeBtn{
+    position: absolute;
+    left: 25rem;
+    top: 0.25rem;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.title{
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.productData{
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product > .img{
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+}
+
+.price > span{
+    color: #f00;
+    font-size: 18px;
+}
+
+.quantity{
+    font-size: 18px;
+}
+
+.right{
+    flex: 1;
+    padding: 1rem;
+    height: 200px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(237, 232, 232);
+    border-radius: 20px;
+}
+
+.totalProductMsg{
+    margin-bottom: 1rem;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.subtotalCheckoutBtns{
+    display: flex;
+    margin-top: 2.5rem;
+}
+
+.subtotal{
+    font-size: 20px;
+    margin-top: 0.5rem;
+    margin-right: 2.5rem;
+}
+
+.orderNowBtn{
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #f00;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.orderNowBtn:hover{
+    border-color: #f00;
+    color: #f00;
+    background-color: #fff;
+}
+
+.orderNowBtn:disabled{
+    background-color: #999;
+    color: #fff;
+}
+
+.noProducts{
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 40px;
+    color: #333;
+}
+/* Responsive adaptations for the login alert */
+@media (max-width: 768px) {
+    .loginAlert {
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 3px;
+    }
+}
+
+/* ... Rest of your styles ... */
+
+.wrapper {
+    margin: 0 auto;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow items to wrap in small screens */
+}
+
+.left, .right {
+    flex: 1 0 50%; /* Basis at 50% width, grow and shrink */
+}
+
+@media (max-width: 768px) {
+    .left, .right {
+        flex-basis: 100%; /* Stack them on mobile */
+    }
+}
+
+/* ... More styles ... */
+
+@media (max-width: 768px) {
+    .closeBtn {
+        left: auto; /* Adjust close button positioning */
+        right: 10px; /* Keep it towards the right */
+    }
+    
+    .totalProductMsg, .subtotalCheckoutBtns, .subtotal, .orderNowBtn {
+        text-align: center; /* Center elements on mobile */
+    }
+    
+    .subtotalCheckoutBtns {
+        flex-direction: column; /* Stack buttons and subtotal vertically */
+        align-items: center;
+    }
+    
+    .subtotal {
+        margin: 0; /* Remove margin for mobile */
+        margin-bottom: 1rem; /* Add space below on small screens */
+    }
+    
+    .product {
+        flex-direction: column; /* Stack product image and details */
+        align-items: center;
+    }
+    
+    .price > span, .quantity {
+        text-align: center; /* Center text for mobile */
+    }
+    
+    .noProducts {
+        font-size: 24px; /* Reduce font size on mobile */
+    }
+}
+
+/* It's important to also adjust other interactive elements for touch screens */
+@media (max-width: 768px) {
+    .orderNowBtn {
+        padding: 0.75rem 1.5rem; /* Make buttons larger for better touch targets */
+    }
+}

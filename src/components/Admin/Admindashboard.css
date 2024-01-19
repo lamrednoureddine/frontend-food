@@ -1,0 +1,17 @@
+.dashboard {
+    padding-top: 60px; /* Height of the navbar */
+    
+    display: flex;
+    min-height: 100vh; /* Full height of the viewport */
+  }
+  .content {
+    flex-grow: 1; /* Take up the remaining space */
+    margin-left: 200px; /* Sidebar width when open */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable content */
+  }
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 50px; /* Sidebar width when closed */
+    }
+  }

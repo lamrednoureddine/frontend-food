@@ -1,0 +1,83 @@
+.image-slider {
+    position: relative;
+    width: 100%; /* Use 100% width for responsiveness */
+    overflow: hidden;
+    padding-left: 20px;
+    height: 300px;
+    align-items: center;
+    
+
+}
+.image-slider img {
+    display: block;
+    object-fit: cover; /* Cover can cut off parts of the image */
+    width: 100%;
+    height: 100%; /* Set height to 100% of the container if you want it to fill the container */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding effect */
+}
+/* Maintain aspect ratio of 16:9 */
+.image-slider::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%; /* 9 / 16 = 0.5625 * 100% */
+}
+
+/* Absolute position within the ::before pseudo-element */
+.image-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.image-slider img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    transition: transform 0.7s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Navigation buttons */
+.image-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.image-slider button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Previous button to the left */
+.image-slider button:first-of-type {
+    left: 10px;
+}
+
+/* Next button to the right */
+.image-slider button:last-of-type {
+    right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-slider {
+        max-width: 100%;
+    }
+    
+    .image-slider button {
+        padding: 5px;
+    }
+}
